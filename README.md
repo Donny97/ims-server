@@ -1,6 +1,6 @@
 # IMS ( A Privacy Based Image Management System API with a voting system )
 
-IMS is an Image Management System based on Three Privacy Status for each image which also provides the feature of upvote and downvote for each image
+IMS is an Image Management System (IMS) based on Three Privacy Status for each image which also provides the feature of upvote and downvote for each image
 * Public ( any unregisterd user can view the image ) - `0`
 * Restricted ( only visible to the registered users ) - `1`
 * Private ( only visible to the owner of the image ) -  `any numeric value except 0 & 1`
@@ -35,7 +35,7 @@ Be sure to set HTTP Content-Type Header to `application/json` except for the upl
   }
   ```
 
-### Upload
+### Uploading
 * `/api/upload` - supports jpg, jpeg and png mimetypes
 
 following are the fields for the file upload
@@ -43,13 +43,13 @@ following are the fields for the file upload
   * desc - description of the image
   * privacy - privacy status of the image in numeric value
 
-###  Get Image Info
+###  Getting Image Info
 * `/api/myImg` - sends a json array of all the images ( along with their info ) of the currently logged in user 
 * `/api/userId/:userId`-
     * ***For a logged in user*** : Sends a json array of all the Public and Restricted images ( along  with their info ) of the specified user. 
     * ***For a guest user*** : Sends a json array of all the Public images ( along  with their info ) of the specified user. 
 
-### View Image
+### Viewing Image
 * `/api/view/:filename` - you can view the image if you fullfill the requiremenrts of the privacy status of the specified image, otherwise you'll get a message stating that access was unauthorized
 
 ### Voting System
@@ -57,7 +57,7 @@ following are the fields for the file upload
 * `/api/downvote/:filename` - downvotes the specified image
 * `/api/getVote/:filename` - sends the total no. of votes i.e ( upvotes - downvotes) of the specified image.
 
-### Edit Image Info
+### Editing Image Information
 * `/api/edit/:filename` - edit the info in the following format. Note that all of the fields are optional i.e you can only specify any one or two of them to edit the image info.
 
   ```json
@@ -68,7 +68,7 @@ following are the fields for the file upload
   }
   ```
     
-### delete the image
+### deleting the image
 * `/api/del/:filename` - delete the specified file
 
 
